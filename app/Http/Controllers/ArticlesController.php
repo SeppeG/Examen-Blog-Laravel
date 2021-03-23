@@ -100,7 +100,7 @@ class ArticlesController
     {
         $article_name = $article;
         $article->delete();
-        return view('articles.show', ['article' => $article]);
+        return view('articles.delete', ['article' => $article_name]);
         
     }
 
