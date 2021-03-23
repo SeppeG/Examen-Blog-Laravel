@@ -99,9 +99,8 @@ class ArticlesController
     public function destroy(Article $article)
     {
         $article_name = $article;
-        return view('articles.delete', ['article' => $article_name]);
         $article->delete();
-        
+        return view('articles.delete', ['article' => $article_name]);
         
     }
 
