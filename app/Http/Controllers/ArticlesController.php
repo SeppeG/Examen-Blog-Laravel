@@ -45,7 +45,7 @@ class ArticlesController
     {
         $this->validateArticle();
         $article = new Article(request(['title', 'excerpt', 'body']));
-        $article->user_id = Auth::id(); // !!hard coded!!
+        $article->user_id = Auth::id();
         $article->save();
         
         if (request()->has('tags')) {
@@ -99,7 +99,9 @@ class ArticlesController
     public function destroy(Article $article)
     {
         $article_name = $article;
-        $article->delete();
+        if ($article->user_id == Auth::id()) {
+            $article->delete();
+        }
         return view('articles.delete', ['article' => $article_name]);
         
     }
