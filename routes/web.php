@@ -33,7 +33,7 @@ Route::get('/articles/create', [ArticlesController::class, 'create']);
 Route::get('/articles/{article}', [ArticlesController::class, 'show'])->name('articles.show');
 Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit']);
 Route::put('/articles/{article}', [ArticlesController::class, 'update']);
-//Route::delete('articles/{article}/delete', [ArticlesController::class, 'destroy']);
+Route::get('articles/{article}/delete', [ArticlesController::class, 'destroy']);
 
 Auth::routes();
 
