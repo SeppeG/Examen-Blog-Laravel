@@ -16,7 +16,7 @@
 				<form action="{{$article->path()}}/edit" method="get">
 					<button class="button is-link" type="submit">Edit article</button>
 				</form>
-				<form action="{{$article->path()}}/delete" method="POST">
+				<form action="{{$article->path()}}/delete" method="get">
 					@csrf
 					@method('delete')
 					<button class="button is-link" onclick="return confirm('Are you sure?')" type="submit">Delete article</button>
